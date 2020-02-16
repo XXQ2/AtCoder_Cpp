@@ -12,7 +12,7 @@ int main(){
     while(hp >= 1){
         hp /= 2;
         n.push_back(count);
-        count = count *2;
+        count = 2*count;
     }
     int result;
     rep(i, n.size()) result += n.at(i);
