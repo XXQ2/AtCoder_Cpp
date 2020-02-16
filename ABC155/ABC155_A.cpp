@@ -7,8 +7,8 @@ int main(){
     int a, b, c;
     cin >> a >> b >> c;
 
-    set<int> set{a, b, c};
+    set<int> s = {a, b, c};
 
-    if(set.size() == 2) cout << "Yes" << endl;
+    if(s.size() == 2) cout << "Yes" << endl;
     else cout << "No" << endl;
 }
