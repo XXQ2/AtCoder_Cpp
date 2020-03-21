@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
-#define rep(i, n) for(int i = 0; i < (n); i++)
+#define forn(i, n) for (int i = 0; i < (int)(n); ++i)
+#define for1(i, n) for (int i = 1; i <= (int)(n); ++i)
+#define fore(i, l, r) for (int i = (int)(l); i <= (int)(r); ++i)
+#define ford(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
+#define all(x) (x).begin(), (x).end()
 using namespace std;
 using ll = long long;
 
