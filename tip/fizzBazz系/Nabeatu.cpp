@@ -3,6 +3,9 @@
 using namespace std;
 using ll = long long;
 
+/**
+ * 3の倍数と3がつく数字のみ出力する
+**/
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int n, x;
