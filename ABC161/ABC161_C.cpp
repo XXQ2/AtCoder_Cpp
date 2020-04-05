@@ -10,12 +10,8 @@ using ll = long long;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    ll n, k, crr, pre = 1001001001001001001;
+    ll n, k;
     cin >> n >> k;
     ll l = n % k;
-    while(pre > l){
-        pre = l;
-        l = abs(pre - k);
-    }
-    cout << min(n, pre) << endl;
+    cout << min(l, k - l) << endl;
 }

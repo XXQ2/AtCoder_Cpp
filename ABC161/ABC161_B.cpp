@@ -17,6 +17,6 @@ int main(){
     forn(i, n) cin >> a[i];
     ld all = accumulate(all(a), 0);
     ld cnt = 0;
-    forn(i, n) if(a[i]*(4*m)/all >= 1) cnt++;
+    forn(i, n) if(a[i]*(4*m) >= all) cnt++;
     cout << (cnt >= m? "Yes" : "No") << endl;
 }
