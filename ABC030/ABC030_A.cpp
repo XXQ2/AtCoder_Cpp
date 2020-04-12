@@ -12,11 +12,29 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
-    ld takahashi = b * 1.0 / a;
-    ld aoki = d * 1.0 / c;
-    if(takahashi == aoki) cout << "DRAW" << endl;
-    else if(takahashi > aoki) cout << "TAKAHASHI" << endl;
+    int a, b, c, d, e, f;
+    cin >> a >> b >> c >> d >> e >> f;
+
+    // ３チーム比較の時
+    // int a, b, c, d, e, f;
+    // cin >> a >> b >> c >> d >> e >> f;
+
+    if((b * c) == (a * d)) cout << "DRAW" << endl;
+    else if((b * c) > (a * d)) cout << "TAKAHASHI" << endl;
     else cout << "AOKI" << endl;
+
+    // こんな書き方でもOK
+    // int x = (b * c) - (a * d);
+    // if(x == 0) cout << "DRAW" << endl;
+    // else if(x > 0) cout << "TAKAHASHI" << endl;
+    // else cout << "AOKI" << endl;
+
+    // ３チーム比較の時はこんな感じ（たぶん）
+    // ll A = b * c * e;
+    // ll B = d * a * e;
+    // ll C = f * a * c;
+    // if(A == B && B == C) cout << "draw" << endl;
+    // else if(A >= B && A >= C) cout << "A" << endl;
+    // else if(A <= B && B >= C) cout << "B" << endl;
+    // else if(A <= C && B <= C) cout << "C" << endl;
 }
