@@ -14,10 +14,12 @@ int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int a, b, c;
     cin >> a >> b >> c;
-    if(a > b && a > c && b > c) cout << 1 << endl << 2 << endl << 3 << endl;
-    else if(a > b && a > c && c > b) cout << 1 << endl << 3 << endl << 2 << endl;
-    else if(b > c && a > c) cout << 2 << endl << 1 << endl << 3 << endl;
-    else if(b > c && c > a) cout << 3 << endl << 1 << endl << 2 << endl;
-    else if(a > b) cout << 2 << endl << 3 << endl << 1 << endl;
-    else cout << 3 << endl << 2 << endl << 1 << endl;
+    vector<int> v = {a, b, c};
+    vector<int> t = {a, b, c};
+    sort(all(t));
+    forn(i, 3){
+        int cnt = 0;
+        forn(j, 3) if(v[i] <= t[j]) cnt++;
+        cout << cnt << endl;
+    }
 }
