@@ -12,8 +12,8 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int a, b, c, d, e, f;
-    cin >> a >> b >> c >> d >> e >> f;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
     // ３チーム比較の時
     // int a, b, c, d, e, f;
