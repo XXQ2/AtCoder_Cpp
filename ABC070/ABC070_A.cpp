@@ -14,10 +14,8 @@ int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     string n;
     cin >> n;
-    bool ans = true;
-    int s = n.size() - 1;
-    forn(i, s){
-        if(n[i] != n[s-i]) ans = false;
-    }
-    cout << (ans ? "Yes" : "No") << endl;
+    string t = n;
+    reverse(all(t));
+    if(n == t) cout << "Yes" << endl;
+    else cout << "No" << endl;
 }
