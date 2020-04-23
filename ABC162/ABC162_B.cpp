@@ -12,5 +12,11 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    ll n;
+    cin >> n;
+    ll ans = 0;
+    for1(i, n){
+        if(!(i % 3 == 0 || i % 5 == 0)) ans += i;
+    }
+    cout << ans << endl;
 }
