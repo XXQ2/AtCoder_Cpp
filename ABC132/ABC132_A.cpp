@@ -15,13 +15,7 @@ int main(){
     string s;
     cin >> s;
     bool ans = false;
-    if(s[0] == s[1]){
-        if(s[0] != s[2] && s[2] == s[3]) ans = true;
-    }else if(s[0] == s[2]){
-        if(s[0] != s[1] && s[1] == s[3]) ans = true;
-    }else if(s[0] == s[3]){
-        if(s[0] != s[1] && s[1] == s[2]) ans = true;
-    }
-
+    sort(all(s));
+    if(s[0] == s[1] && s[2] == s[3] && s[0] != s[2]) ans = true;
     cout << (ans ? "Yes" : "No") << endl;
 }
