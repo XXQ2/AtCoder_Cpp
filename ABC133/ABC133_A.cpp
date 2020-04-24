@@ -14,6 +14,5 @@ int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int n, a, b;
     cin >> n >> a >> b;
-    if(n * a >= b) cout << b << endl;
-    else cout << n * a << endl;
+    cout << min((n * a), b) << endl;
 }
