@@ -12,5 +12,21 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> a(n), b(n), c(n);
+    forn(i, n) cin >> a[i];
+    forn(i, n) cin >> b[i];
+    forn(i, n-1) cin >> c[i];
+    c[n-1] = 0;
+
+    int ans = 0, tmp = 0, crr = a[0]-1;
+    forn(i, n){
+        int l = a[i];
+        if(l == crr + 1) ans += b[l-1] + tmp;
+        else ans += b[l-1];
+        crr = l;
+        tmp = c[l-1];
+    }
+    cout << ans << endl;
 }

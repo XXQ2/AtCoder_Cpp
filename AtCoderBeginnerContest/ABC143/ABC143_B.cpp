@@ -12,5 +12,21 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    forn(i, n) cin >> v[i];
+    set<string> s;
+    ll ans = 0;
+    forn(i, n){
+        forn(j, n){
+            if(i == j) continue;
+            string t = to_string(max(i, j)) + "_" + to_string(min(i, j));
+            auto p = s.insert(t);
+            if(p.second){
+                ans += v[i] * v[j];
+            }
+        }
+    }
+    cout << ans << endl;
 }

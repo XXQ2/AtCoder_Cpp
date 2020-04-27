@@ -12,5 +12,15 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    string s;
+    cin >> s;
+    bool ans = true;
+    forn(i, s.size()){
+        if(i % 2 == 0){
+            if(s[i] != 'R' && s[i] != 'U' && s[i] != 'D') ans = false;
+        }else{
+            if(s[i] != 'L' && s[i] != 'U' && s[i] != 'D') ans = false;
+        }
+    }
+    cout << (ans ? "Yes" : "No") << endl;
 }

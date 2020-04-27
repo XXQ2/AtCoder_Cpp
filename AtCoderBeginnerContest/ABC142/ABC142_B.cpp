@@ -12,5 +12,11 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, k;
+    cin >> n >> k;
+    vector<int> h(n);
+    forn(i, n) cin >> h[i];
+    int ans = 0;
+    forn(i, n) if(h[i] >= k) ans++;
+    cout << ans << endl;
 }
