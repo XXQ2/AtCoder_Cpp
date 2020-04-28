@@ -12,5 +12,16 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    // map<int, int> mp;
+    vector<int> v(n); // vectorでもいける
+    forn(i, n-1){
+        int a;
+        cin >> a;
+        v[a-1]++;
+    }
+    forn(i, n){
+        cout << v[i] << endl;
+    }
 }

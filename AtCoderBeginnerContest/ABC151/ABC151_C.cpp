@@ -1,35 +1,38 @@
 #include <bits/stdc++.h>
-#define rep(i, n) for(int i = 0; i < (n); i++)
+#define forn(i, n) for (long long i = 0; i < (long long)(n); ++i)
+#define for1(i, n) for (long long i = 1; i <= (long long)(n); ++i)
+#define fore(i, l, r) for (long long i = (long long)(l); i <= (long long)(r); ++i)
+#define fordn(i, n) for (long long i = (long long)(n) - 1; i >= 0; --i)
+#define ford1(i, n) for (long long i = (long long)(n); i >= 1; --i)
+#define all(x) (x).begin(), (x).end()
+#define PI 3.141592653589793
 using namespace std;
 using ll = long long;
+using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    ll n, m;
+    int n, m;
     cin >> n >> m;
-
-    vector<int> ac(n), pena(n);
-    rep(i, m) {
-        ll p;
+    vector<int> v(n), va(n, -1);
+    int ans = 0;
+    forn(i, m){
+        int a;
         string s;
-        cin >> p >> s;
-        /* 問題番号pは[1<=p<=N]なのでindex参照のため0始まりにする */
-        --p;
-        if(ac[p]) continue; // p番目の問題がすでにACされていたら次の処理へ
-        if(s == "AC") {
-            // "AC"だった場合、p番目の配列に1を代入する
-            // これにより1度ACした問題は無視されるようになる
-            ac[p] = 1;
+        cin >> a >> s;
+        a--;
+        if(s == "AC"){
+            if(va[a] == -1){
+                va[a] = v[a];
+                ans++;
+            }
         }else{
-            pena[p]++; // "WA"だった場合ペナルティを加算
+            v[a]++;
         }
     }
-    int AC = 0, PENA = 0;
-    rep(i, n) {
-        AC += ac[i];
-        if(ac[i]) PENA += pena[i];
+    int pena = 0;
+    forn(i, n){
+        if(va[i] != -1) pena += va[i];
     }
-
-    printf("%d %d\n", AC, PENA);
-    return 0;
+    cout << ans << " " << pena << endl;
 }

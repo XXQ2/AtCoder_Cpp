@@ -16,4 +16,9 @@ int main(){
     int a = 9, b = 15;
     cout << a << "と" << b << "の最大公約数：" << gcd(a, b) << endl;
     cout << a << "と" << b << "の最大公倍数：" << lcm(a, b) << endl;
+
+    // ３つ(複数)の場合、以下のように組み合わせると良い
+    int c = 21;
+    cout << gcd(gcd(a, b), c) << endl;
+    cout << lcm(lcm(a, b), c) << endl;
 }

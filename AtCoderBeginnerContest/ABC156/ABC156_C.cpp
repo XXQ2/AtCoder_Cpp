@@ -1,36 +1,30 @@
 #include <bits/stdc++.h>
-#define rep(i, n) for(int i = 0; i < (n); i++)
+#define forn(i, n) for (long long i = 0; i < (long long)(n); ++i)
+#define for1(i, n) for (long long i = 1; i <= (long long)(n); ++i)
+#define fore(i, l, r) for (long long i = (long long)(l); i <= (long long)(r); ++i)
+#define fordn(i, n) for (long long i = (long long)(n) - 1; i >= 0; --i)
+#define ford1(i, n) for (long long i = (long long)(n); i >= 1; --i)
+#define all(x) (x).begin(), (x).end()
+#define PI 3.141592653589793
 using namespace std;
 using ll = long long;
+using ld = long double;
+
+ll f(vector<int> v, int c){
+    ll ans = 0;
+    forn(l, v.size()){
+        ans += pow(v[l] - c, 2);
+    }
+    return ans;
+}
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int n;
     cin >> n;
-
     vector<int> x(n);
-    rep(i, n) cin >> x[i];
-    sort(x.begin(), x.end());
-
-    int l = 0, r = x.size()-1, mid = (l+r) / 2;
-    vector<int> data;
-    while(l <= mid){
-        int t = (x[l] + x[r]) / 2;
-        cout << "l:" << x[l] << ", r:" << x[r] << ", t:" << t << endl;
-        data.push_back(t);
-        ++l;
-        --r;
-    }
-
-    ll a = round(accumulate(data.begin(), data.end(), 0) / data.size());
-
-    ll ans;
-    for(int i : x) {
-        ll s = pow((i - a), 2);
-        cout << "p:" << i-a << ", s:" << s << endl;
-        ans += s;
-        cout << "ans:" << ans << endl;
-    }
-    cout << ans << endl;
+    forn(i, n) cin >> x[i];
+    int avg = accumulate(all(x), 0) / n;
+    cout << min(f(x, avg), f(x, avg+1)) << endl;
 
 }

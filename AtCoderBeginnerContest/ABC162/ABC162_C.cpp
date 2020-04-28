@@ -10,7 +10,24 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+int gcd(int a, int b){
+    if(a % b == 0) return b;
+    else return gcd(b, a%b);
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int k;
+    cin >> k;
+    ll ans = 0;
+    for1(i, k){
+        for1(j, k){
+            for1(l, k){
+                int s = gcd(i, j);
+                int t = gcd(s, l);
+                ans += t;
+            }
+        }
+    }
+    cout << ans << endl;
 }
