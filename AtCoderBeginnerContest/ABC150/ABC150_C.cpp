@@ -10,25 +10,21 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
-int keta(int c){
-    int ans = 0;
-    while(c){
-        ans++;
-        c /= 10;
-    }
-    return ans;
-}
-
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    ll a, b, x;
-    cin >> a >> b >> x;
-    ll l = 0, r = 1000000001;
-    while((r - l) > 1){
-        ll m = (r + l) / 2;
-        ll o = a * m + b * keta(m);
-        if(x >= o) l = m;
-        else r = m;
+    int n;
+    cin >> n;
+    vector<int> p(n), q(n);
+    forn(i, n) cin >> p[i];
+    forn(i, n) cin >> q[i];
+    vector<int> a;
+    for1(i, n) a.push_back(i);
+    map<vector<int>, int> mp;
+    mp[a] = mp.size();
+    while(next_permutation(all(a))){
+        mp[a] = mp.size();
     }
-    cout << l << endl;
+
+    int ans = abs(mp[p] - mp[q]);
+    cout << ans << endl;
 }

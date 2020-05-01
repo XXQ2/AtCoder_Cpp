@@ -12,5 +12,13 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<pair<int, int>> a(n);
+    forn(i, n){
+        cin >> a[i].first;
+        a[i].second = i + 1;
+    }
+    sort(all(a));
+    forn(i, n) cout << a[i].second << " ";
 }

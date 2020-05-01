@@ -9,17 +9,28 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+int n;
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int n;
     cin >> n;
-    vector<pair<int, int>> a(n);
-    forn(i, n){
-        int x, y;
-        cin >> x >> y;
-        a[i] = make_pair(x, y);
-    }
-    forn(i, n){
-        
-    }
+    vector<int> x(n), y(n);
+    forn(i, n) cin >> x[i] >> y[i];
+    auto dist = [&](int i, int j){
+        double dx = x[i] - x[j];
+        double dy = y[i] - y[j];
+        return sqrt(dx*dx + dy*dy);
+    };
+    vector<int> p(n);
+    forn(i, n) p[i] = i;
+    double len = 0;
+    int cnt = 0;
+    do {
+        forn(i, n-1){
+            len += dist(p[i], p[i+1]);
+        }
+        cnt++;
+    } while(next_permutation(all(p)));
+    double ans = len / cnt;
+    cout << setprecision(10) << ans << endl;
 }
