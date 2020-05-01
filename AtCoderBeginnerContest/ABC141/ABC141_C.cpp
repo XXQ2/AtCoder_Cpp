@@ -12,5 +12,17 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, k, q;
+    cin >> n >> k >> q;
+    vector<int> vp(n);
+    forn(i, q){
+        int l;
+        cin >> l;
+        vp[l-1]++;
+    }
+    forn(i, n){
+        int t = (vp[i] - q) + k;
+        if(t <= 0) cout << "No" << endl;
+        else cout << "Yes" << endl;
+    }
 }
