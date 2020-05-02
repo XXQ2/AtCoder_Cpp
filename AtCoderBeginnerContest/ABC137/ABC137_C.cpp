@@ -12,5 +12,19 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    map<string, int> mp;
+    forn(i, n){
+        string s;
+        cin >> s;
+        sort(all(s));
+        mp[s]++;
+    }
+    ll ans = 0;
+    for(auto p : mp){
+        int m = p.second;
+        ans += (ll)m*(m-1)/2;
+    }
+    cout << ans << endl;
 }

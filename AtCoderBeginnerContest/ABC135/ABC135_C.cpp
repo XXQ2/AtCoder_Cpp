@@ -12,5 +12,22 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> a(n+1), b(n);
+    forn(i, n+1) cin >> a[i];
+    forn(i, n) cin >> b[i];
+    ll ans = 0;
+    forn(i, n){
+        if(a[i] >= b[i]){
+            ans += b[i];
+        }else{
+            ans += a[i];
+            int m = b[i] - a[i];
+            int mi = min(a[i+1], m);
+            ans += mi;
+            a[i+1] -= mi;
+        }
+    }
+    cout << ans << endl;
 }

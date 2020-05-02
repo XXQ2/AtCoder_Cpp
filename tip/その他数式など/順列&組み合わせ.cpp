@@ -27,6 +27,9 @@ using ld = long double;
  * 
  * 2. nCr = nPr / r!
  * 
+ * ※ n個の中から2つを選ぶ場合は以下の書き方でOK
+ * n * (n-1) / 2
+ * 
 **/
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);

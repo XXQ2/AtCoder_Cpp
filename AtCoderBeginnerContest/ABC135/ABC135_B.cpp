@@ -12,5 +12,22 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> p(n);
+    vector<pair<int, int>> vp;
+    forn(i, n) cin >> p[i];
+    forn(i, n){
+        int pi = p[i];
+        if(i+1 != pi){
+            pair<int, int> p = make_pair(i+1, pi);
+            vp.push_back(p);
+        }
+    }
+    bool ans = false;
+    if(vp.size() == 0) ans = true;
+    else if(vp.size() == 2){
+        if(vp[0].first == vp[1].second && vp[1].first == vp[0].second) ans = true;
+    }
+    cout << (ans ? "YES" : "NO") << endl;
 }

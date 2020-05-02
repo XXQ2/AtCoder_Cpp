@@ -12,5 +12,8 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, d;
+    cin >> n >> d;
+    int a = 1 + (d*2);
+    cout << (n + (a-1)) / a << endl;
 }

@@ -12,5 +12,20 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<pair<int, int>> vp(n);
+    forn(i, n){
+        cin >> vp[i].first;
+        vp[i].second = i;
+    }
+    sort(all(vp), greater<pair<int, int>>());
+    forn(i, n){
+        pair<int, int> p = vp[0];
+        if(i == p.second){
+            cout << vp[1].first << endl;
+        }else {
+            cout << p.first << endl;
+        }
+    }
 }

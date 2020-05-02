@@ -12,5 +12,23 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    forn(i, n) cin >> h[i];
+    bool ans = true, canDown = true;
+    forn(i, n-1){
+        if(!ans) break;
+        int k = h[i] - h[i+1];
+        if(k == 1){
+            if(canDown) h[i] -= 1;
+            else ans = false;
+        }
+        else if(k == 0){
+            if(canDown) h[i] -= 1;
+        }
+        else if(k > 1) ans = false;
+        canDown = h[i] - h[i+1] < 0 ? true : false;
+    }
+    cout << (ans ? "Yes" : "No") << endl;
 }

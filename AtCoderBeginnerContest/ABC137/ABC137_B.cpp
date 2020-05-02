@@ -12,5 +12,9 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int k, x;
+    cin >> k >> x;
+
+    fore(i, x-(k-1), x+(k-1)) cout << i << " ";
+    cout << endl;
 }

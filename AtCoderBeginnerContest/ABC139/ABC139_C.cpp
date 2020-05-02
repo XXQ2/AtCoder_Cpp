@@ -12,5 +12,15 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    forn(i, n) cin >> h[i];
+    int cnt = 0, tmp = 0;
+    for1(i, n-1){
+        if(h[i-1] >= h[i]) tmp++;
+        else tmp = 0;
+        cnt = max(cnt, tmp);
+    }
+    cout << cnt << endl;
 }

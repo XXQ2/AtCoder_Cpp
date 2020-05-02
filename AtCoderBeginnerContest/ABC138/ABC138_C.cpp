@@ -10,7 +10,21 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+ld f(vector<int> x){
+    ld ret = (double)(x[0] + x[1]) / 2;
+    fore(i, 2, x.size()-1){
+        ret = (double)(ret + x[i]) / 2;
+    }
+    return ret;
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    forn(i, n) cin >> v[i];
+    sort(all(v));
+    ld ans = f(v);
+    cout << ans << endl;
 }

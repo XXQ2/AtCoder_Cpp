@@ -10,7 +10,23 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+int keta(int x){
+    int r = 0;
+    while(x){
+        r++;
+        x /= 10;
+    }
+    return r;
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    int ans = 0;
+    ford1(i, n){
+        int k = keta(i);
+        if(k % 2 != 0) ans++;
+    }
+    cout << ans << endl;
 }
