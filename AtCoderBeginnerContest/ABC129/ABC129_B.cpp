@@ -12,5 +12,18 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> w(n);
+    forn(i, n) cin >> w[i];
+    int m = 10000;
+    for1(i, n){
+        int a = 0, b = 0;
+        forn(k, n){
+            if(k <= i) a += w[k];
+            else b += w[k];
+        }
+        m = min(m, abs(a - b));
+    }
+    cout << m << endl;
 }

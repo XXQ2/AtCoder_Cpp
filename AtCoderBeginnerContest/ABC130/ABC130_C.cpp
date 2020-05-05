@@ -12,5 +12,9 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int w, h, x, y;
+    cin >> w >> h >> x >> y;
+    double ans = (double)w * h / 2;
+    int num = (w == x*2 && h == y*2 ? 1 : 0);
+    cout << setprecision(5) << ans << " " << num << endl;
 }

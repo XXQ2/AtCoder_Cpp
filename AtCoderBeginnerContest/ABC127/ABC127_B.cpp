@@ -12,5 +12,11 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int r, d, x;
+    cin >> r >> d >> x;
+    forn(i, 10){
+        int t = r * x - d;
+        cout << t << endl;
+        x = t;
+    }
 }

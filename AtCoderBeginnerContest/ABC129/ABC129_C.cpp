@@ -12,5 +12,23 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, m;
+    cin >> n >> m;
+    vector<int> broken(n+1);
+    forn(i, m){
+        int a ;
+        cin >> a;
+        broken[a] = 1;
+    }
+    vector<int> dp(n+2);
+    const int mod = 1000000007;
+    dp[n] = 1;
+    fordn(i, n){
+        if(broken[i]){
+            dp[i] = 0;
+            continue;
+        }
+        dp[i] = (dp[i+1] + dp[i+2]) % mod;
+    }
+    cout << dp[0] << endl;
 }

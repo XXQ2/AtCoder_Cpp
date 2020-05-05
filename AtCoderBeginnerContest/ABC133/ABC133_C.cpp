@@ -12,5 +12,15 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    ll l, r;
+    cin >> l >> r;
+    r = min(r, l+2020);
+    int ans = 2018;
+    fore(i, l, r-1){
+        fore(j, l+1, r){
+            int a = i*j % 2019;
+            ans = min(ans, a);
+        }
+    }
+    cout << ans << endl;
 }

@@ -12,5 +12,18 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<pair<pair<string, int>, int>> vpp(n);
+    forn(i, n){
+        string s;
+        int m;
+        cin >> s >> m;
+        m = -m;
+        vpp[i] = {{s, m}, i+1};
+    }
+    sort(all(vpp));
+    forn(i, n){
+        cout << vpp[i].second << endl;
+    }
 }
