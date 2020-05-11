@@ -12,5 +12,17 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    string s;
+    cin >> s;
+    int b = 0, w = 0;
+    forn(i, s.size()){
+        if(i % 2 == 0){
+            if(s[i] == '0') w++;
+            else b++;
+        }else{
+            if(s[i] == '0') b++;
+            else w++;
+        }
+    }
+    cout << min(b, w) << endl;
 }

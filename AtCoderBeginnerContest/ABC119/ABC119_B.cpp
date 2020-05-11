@@ -12,5 +12,19 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    ld ans = 0.0;
+    forn(i, n){
+        ld x;
+        string u;
+        cin >> x >> u;
+        if(u == "JPY"){
+            ans += x;
+        }else{
+            ld l = (ld)x * 380000.0;
+            ans += l;
+        }
+    }
+    cout << setprecision(10) << ans << endl;
 }

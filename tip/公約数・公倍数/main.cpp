@@ -3,8 +3,8 @@ using namespace std;
 
 /** 最大公約数 **/
 int gcd(int a, int b){
-    if(a % b == 0) return b;
-    else return gcd(b, a%b);
+    if(b == 0) return a;
+    return gcd(b, a%b);
 }
 
 /** 最大公倍数 **/

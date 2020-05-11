@@ -10,7 +10,25 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+int gcd(int a, int b){
+    if(b==0) return a;
+    return gcd(b, a%b);
+}
+
+int vgcd(vector<int> v){
+    int ans = v[0];
+    for1(i, v.size()-1){
+        ans = gcd(ans, v[i]);
+    }
+    return ans;
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    forn(i, n) cin >> a[i];
+    int ans = vgcd(a);
+    cout << ans << endl;
 }

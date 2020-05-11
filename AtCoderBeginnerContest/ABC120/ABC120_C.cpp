@@ -12,5 +12,12 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    string s;
+    cin >> s;
+    vector<int> v(2, 0);
+    forn(i, s.size()){
+        v[s[i] - '0']++;
+    }
+    int ans = min(v[0], v[1]);
+    cout << ans * 2 << endl;
 }

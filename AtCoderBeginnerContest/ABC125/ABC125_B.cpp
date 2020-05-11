@@ -12,5 +12,14 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> v(n), c(n);
+    forn(i, n) cin >> v[i];
+    forn(i, n) cin >> c[i];
+    int ans = 0;
+    forn(i, n){
+        if(v[i] > c[i]) ans += v[i] - c[i];
+    }
+    cout << ans << endl;
 }

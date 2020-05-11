@@ -12,5 +12,23 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int s;
+    cin >> s;
+    int a = s / 100, b = s % 100;
+    bool ba = false, bb = false;
+    if(a >= 0 && a <= 99){
+        if(b >= 1 && b <= 12){
+            ba = true;
+        }
+    }
+    if(a >= 1 && a <= 12){
+        if(b >= 0 && b <= 99){
+            bb = true;
+        }
+    }
+    if(ba&&bb) cout << "AMBIGUOUS" << endl;
+    else if(ba) cout << "YYMM" << endl;
+    else if(bb) cout << "MMYY" << endl;
+    else cout << "NA" << endl;
+
 }

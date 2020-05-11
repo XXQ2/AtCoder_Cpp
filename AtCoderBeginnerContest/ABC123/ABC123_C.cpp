@@ -12,5 +12,9 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    ll n, a, b, c, d, e;
+    cin >> n >> a >> b >> c >> d >> e;
+    ll m = min(a, min(b, min(c, min(d, e))));
+    ll l = (n + (m-1)) / m;
+    cout << l + 4 << endl;
 }

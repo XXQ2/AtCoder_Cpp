@@ -10,7 +10,20 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+/** 最大公約数 **/
+int gcd(int a, int b){
+    if(a % b == 0) return b;
+    else return gcd(b, a%b);
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int a, b, k;
+    cin >> a >> b >> k;
+    int cnt = 0;
+    vector<int> ans;
+    ford1(i, max(a, b)){
+        if(a % i == 0 && b % i == 0) ans.push_back(i);
+    }
+    cout << ans[k-1] << endl;
 }

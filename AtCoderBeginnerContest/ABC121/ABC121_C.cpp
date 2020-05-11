@@ -12,5 +12,18 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    ll n, m;
+    cin >> n >> m;
+    vector<pair<ll, ll>> vp(n);
+    forn(i, n) cin >> vp[i].first >> vp[i].second;
+    sort(all(vp));
+    ll mm = m, ans = 0;
+    forn(i, n){
+        if(mm){
+            int t = min(mm, vp[i].second);
+            ans += vp[i].first * t;
+            mm -= t;
+        }
+    }
+    cout << ans << endl;
 }

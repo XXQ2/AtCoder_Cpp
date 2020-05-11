@@ -12,5 +12,11 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, m;
+    cin >> n >> m;
+    vector<int> l(m), r(m);
+    forn(i, m) cin >> l[i] >> r[i];
+    sort(all(l), greater<int>());
+    sort(all(r));
+    cout << max(r[0] - l[0] + 1, 0) << endl;
 }

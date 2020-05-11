@@ -10,7 +10,25 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+int f(int x, int k){
+    int cnt = 0;
+    while(x < k){
+        x *= 2;
+        cnt++;
+    }
+    return cnt;
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, k;
+    cin>>n>>k;
+    ld ans = 0.0;
+    for1(i, n){
+        int g = f(i, k);
+        ld m = (g ? (double)1/pow(2, g) : 1);
+        ld l = (double)1 / n;
+        ans += (long double)l * m;
+    }
+    cout << setprecision(10) << ans << endl;
 }

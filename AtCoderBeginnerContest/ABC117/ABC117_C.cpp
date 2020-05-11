@@ -12,5 +12,22 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, m;
+    cin >> n >> m;
+    vector<int> x(m);
+    forn(i, m) cin >> x[i];
+    if(n >= m){
+        cout << 0 << endl;
+        return 0;
+    }
+    sort(all(x));
+    vector<int> cost(m);
+    cost[0] = 0;
+    for1(i, m-1) cost[i] = x[i] - x[i-1];
+    sort(all(cost), greater<int>());
+    forn(i, n-1){
+        cost[i] = 0;
+    }
+    int ans = accumulate(all(cost), 0);
+    cout << ans << endl;
 }

@@ -10,7 +10,36 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+void m(vector<int>& h, int& cnt){
+    int mn = *min_element(all(h));
+    forn(i, h.size()){
+        int t = max(0, h[i]-mn);
+        h[i] = t;
+    }
+    cnt += mn;
+}
+
+void f(vector<int> h, int& cnt){
+    m(h, cnt);
+    vector<int> v;
+    forn(i, h.size()){
+        if(h[i]) v.push_back(h[i]);
+        else{
+            if(v.size()) f(v, cnt);
+            v = {};
+        }
+    }
+    if(v.size()) f(v, cnt);
+}
+
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    int mn = 100;
+    forn(i, n) cin >> h[i];
+    int cnt = 0;
+    f(h, cnt);
+    cout << cnt << endl;
 }

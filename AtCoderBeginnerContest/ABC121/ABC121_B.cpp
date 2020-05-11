@@ -12,5 +12,24 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, m, c;
+    cin >> n >> m >> c;
+    vector<int> b(m);
+    forn(i, m) cin >> b[i];
+    vector<vector<int>> a(n, vector<int>(m));
+    forn(i, n){
+        forn(k, m){
+            cin >> a[i][k];
+        }
+    }
+    int ans = 0;
+    forn(i, n){
+        int t = 0;
+        forn(k, m){
+            t += a[i][k] * b[k];
+        }
+        t += c;
+        if(t > 0) ans++;
+    }
+    cout << ans << endl;
 }
