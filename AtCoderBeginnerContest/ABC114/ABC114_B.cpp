@@ -12,5 +12,13 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    string s;
+    cin >> s;
+    int mn = 753;
+    forn(i, s.size()-2){
+        string t = s.substr(i, 3);
+        int l = stoi(t);
+        mn = min(mn, abs(753 - l));
+    }
+    cout << mn << endl;
 }

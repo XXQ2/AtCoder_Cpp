@@ -12,5 +12,17 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, t, a;
+    cin >> n >> t >> a;
+    ld tmp = 100100.0;
+    int index;
+    forn(i, n){
+        int hi; cin >> hi;
+        ld d = (ld)abs(a - (t - (hi*0.006)));
+        if(tmp>d){
+            tmp = d;
+            index = i;
+        }
+    }
+    cout << index+1 << endl;
 }
