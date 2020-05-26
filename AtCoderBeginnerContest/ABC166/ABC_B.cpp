@@ -12,19 +12,19 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    int n, m, x, y;
-    cin >> n >> m >> x >> y;
-    vector<int> vx(n), vy(m);
-    int maxx = -10000, miny = 10000;
-    forn(i, n){
-        int l;cin >> l;
-        maxx = max(maxx, l);
+    int n, k;
+    cin >> n >> k;
+    vector<int> v(n);
+    forn(i, k){
+        int d;
+        cin >> d;
+        forn(j, d){
+            int a;
+            cin >> a;
+            v[a-1]++;
+        }
     }
-    forn(i, m){
-        int l;cin >> l;
-        miny = min(miny, l);
-    }
-    int ans = miny - maxx;
-    if(ans >= 1 && x < miny && maxx < y) cout << "No War" << endl;
-    else cout << "War" << endl;
+    int ans = 0;
+    forn(i, n) if(!v[i]) ans++;
+    cout << ans << endl;
 }

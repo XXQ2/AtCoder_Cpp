@@ -12,5 +12,25 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, x;
+    cin >> n >> x;
+    vector<int> v(n);
+    forn(i, n) cin >> v[i];
+    sort(all(v));
+    auto it = lower_bound(all(v), x);
+    int i = it - v.begin();
+    int mx = max(abs(x - v[i]), abs(x - v[i-1]));
+    ++mx;
+    bool w = true;
+    do{
+        w = false;
+        int a = v[0]%--mx;
+        forn(i, n){
+            int t = v[i]%mx;
+            if(a != t) w = true;
+        }
+
+    }while(w);
+    cout << mx << endl;
+
 }

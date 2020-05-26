@@ -12,5 +12,16 @@ using ld = long double;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    return 0;
+    int n, t;
+    cin >> n >> t;
+    int ans = 10000;
+    forn(i, n){
+        int ci, ti;
+        cin >> ci >> ti;
+        if(ti <= t){
+            ans = min(ans, ci);
+        }
+    }
+    if(ans == 10000) cout << "TLE" << endl;
+    else cout << ans << endl;
 }
